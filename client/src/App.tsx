@@ -1,5 +1,8 @@
+import { Search } from './components/Search Bar/search_bar'
+
 function App() {
-  return (null
+  return (
+    <Search />
   );
 }
 
