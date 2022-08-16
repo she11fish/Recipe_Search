@@ -1,17 +1,12 @@
-interface meals {
-    [index: string]: any
-}
-interface data {
-    meals: Array<meals> | null
-}
+import Data from "../interfaces/data" 
 
 export default class Recipe {
-    data: data
-    constructor(data: data) {
+    data: Data
+    constructor(data: Data) {
         this.data = data
     }
 
-    change_recipe_data(data: data): void {
+    change_recipe_data(data: Data): void {
         this.data = data
     }
 
@@ -20,6 +15,7 @@ export default class Recipe {
         const isObject = typeof data === 'object' && !Array.isArray(data) && data !== null
         return !(!isObject || !Object.keys(data).length) 
     }
+    
     getName(): string | undefined  {
         const data = this.data
         if (!this.valid_data()) return
@@ -28,11 +24,40 @@ export default class Recipe {
         return
     }
 
+    getNames(): Array<string> | undefined  {
+        const data = this.data
+        const result = []
+        if (!this.valid_data()) return
+        if ("meals" in data && data.meals) {
+                let i = 0
+                while (i < data.meals.length && `strMeal` in data.meals[i] && data.meals[i][`strMeal`]) {
+                    result.push(data.meals[i][`strMeal`])
+                    i++
+                }
+                return result
+            }
+        return
+    }
+
     getCategory(): string | undefined {
         const data = this.data
         if (!this.valid_data()) return
         if ("meals" in data && data.meals && "strCategory" in data.meals[0] && data.meals[0].strCategory) 
             return data.meals[0].strCategory
+        return
+    }
+    
+    getCategories(): Array<string> | undefined  {
+        const data = this.data
+        if (!this.valid_data()) return
+        if ("meals" in data && data.meals) {
+            const result: Array<string> = []
+            for (let meal of data.meals) {
+                if ("strCategory" in meal && meal.strCategory) result.push(meal.strCategory)
+            }
+            return result
+        }
+            
         return
     }
 
@@ -44,15 +69,34 @@ export default class Recipe {
         return
     }
 
+    getAreas(): Array<string> | undefined  {
+        const data = this.data
+        if (!this.valid_data()) return
+        if ("meals" in data && data.meals) {
+            const result: Array<string> = []
+            for (let meal of data.meals) {
+                if ("strArea" in meal && meal.strArea) result.push(meal.strArea)
+            }
+            return result
+        }
+            
+        return
+    }
+
     getIngredients(): Array<string> | undefined {
         const data = this.data
         const result = []
         if (!this.valid_data()) return
         if ("meals" in data && data.meals) {
-                let i = 0 
+                let i = 0
                 while (`strIngredient${i+1}` in data.meals[0] && data.meals[0][`strIngredient${i+1}`]) {
                     result.push(data.meals[0][`strIngredient${i+1}`])
                     i++
+                }
+                let k = 0
+                while (k < data.meals.length && `strIngredient` in data.meals[k] && data.meals[k][`strIngredient`]) {
+                    result.push(data.meals[k][`strIngredient`])
+                    k++
                 }
                 return result
             }

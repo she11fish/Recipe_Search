@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+:root {
+    --blue: #008CBA;
+    --pink: #F6DBEC;
+    --black: #000000;
+    --magnolia: #F3EAF4;
+    --white: #ffffff;
+    --lg-font: 48px;
+    --md-font: 32px;
+    --sm-font: 20px;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0;
+    background-color: var(--magnolia);
+    font-family: 'Roboto Slab', serif;
+}
+
+html {
+    margin: 100px 100px 0px 100px;
+    padding: 0;
+    overflow: scroll;
+}
+
+#search_bar {
+    position: relative;
+    left: 30.9%;
+}
+
+#search_text_box {
+    width: 661px;
+    height: 143px;
+    font-size: 30px;
+    border: 0px;
+}
+
+#search_text_box::placeholder {
+    font-size: var(--lg-font);
+    font-family: 'Roboto Slab', serif;
+    color: var(--black);
+}
+
+#search_icon {
+    width: 84px;
+    height: 49px;
+}
+
+#search_button {
+    position: relative;
+    top: 13px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+#search_button:hover {
+    cursor: pointer;
+}
