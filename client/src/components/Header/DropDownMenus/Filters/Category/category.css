@@ -1,0 +1,7 @@
+.categories {
+    position: relative;
+    top: 202px;
+
+    font-size: 40px;
+    font-family: var(--Inter);
+}

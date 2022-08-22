@@ -103,7 +103,15 @@ export default class Recipe {
         return
     }
 
-    getDirections(): Array<string> | undefined {
+    getDirecitons(): string | undefined {
+        const data = this.data
+        if (!this.valid_data()) return
+        if ("meals" in data && data.meals && "strInstructions" in data.meals[0] && data.meals[0].strInstructions) 
+            return data.meals[0].strInstructions
+        return
+    }
+
+    getMesurments(): Array<string> | undefined {
         const data = this.data
         const result = []
         if (!this.valid_data()) return

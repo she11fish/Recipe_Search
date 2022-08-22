@@ -1,0 +1,8 @@
+.ingredients {
+    position: relative;
+    top: 5885px;
+    text-align: center;
+
+    font-size: var(--sm-font);
+    font-family: var(--Inter);
+}

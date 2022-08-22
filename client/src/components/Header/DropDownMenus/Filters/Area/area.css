@@ -1,65 +1,26 @@
-.filter {
-    display: flex;
-
+.areas {
     position: relative;
-    left: 66.5%;
-    
-    transform: translateY(-58px);
+    top: 523px;
 
-    border: 0;
-
-    /* box-shadow: 2px 5px 5px rgba(0, 0, 0, .3); */
-    
-    background-color: white;
-    padding: 0;
-    font-size: 25px;
-    
-    width: 98px;
-    height: 58px;
-
-    justify-content: space-around;
-    align-items: center;
+    font-size: 40px;
+    font-family: var(--Inter);
 }
 
-.arrow-right {
-    position: relative;
-    top: 2px;
 
-    width: 20px;
-    height: 20px;
+.scroll {
+    overflow: scroll;
+    overflow-y: overlay;
+    overflow-x: overlay;
 }
 
-.arrow-down {
-    position: relative;
-    top: 2px;
-
-    width: 20px;
-    height: 20px;
+.scroll::-webkit-scrollbar {
+    overflow: hidden;
 }
 
-.border-top {
-    border-top: solid 1px;
-    border-color: rgba(0, 0, 0, .3);
-}
-
-.border-bottom {
-    border-bottom: solid 1px;
-    border-color: rgba(0, 0, 0, .3);
-}
-
-.dropdown-tranformation {
-    transform: translate(150px, -112px);
-}
-
-.lg-box {
-    width: 150px;
-    height: 58px;
-}
-
-.animation {
-    transition: all 1s ease-in-out
-}
-
-.clear-margin {
-    margin: 0;
+.back_arrow {
+    position: absolute;
+    top: 15.75px;
+    left: 20.25px;
+    width: 27px;
+    height: 22.5px;
 }
