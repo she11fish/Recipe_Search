@@ -5,6 +5,7 @@ import Data from "../interfaces/data"
 import { DirectionType } from "../interfaces/direction"
 import { IngredientType } from "../interfaces/ingredient"
 import NeededData from "../interfaces/needed_data"
+import Filter from "./filter"
 import List from "./list"
 import Recipe from "./recipe"
 import Search from "./search"
@@ -88,4 +89,44 @@ export async function getAllRelevantData(): Promise<NeededData | void> {
     let result: NeededData
     result = {name: recipe.getName(), source: recipe.getSource(), tutorial: recipe.getTutorial(), img: recipe.getImage(), category: recipe.getCategory(), area: recipe.getArea(), ingredients: recipe.getIngredients(), directions: recipe.getDirecitons()}
     return result
+}
+
+export async function getAllRecipeInfo(name: string | undefined): Promise<NeededData | undefined> {
+    if (!name) return
+    const search = new Search()
+    const response = await search.searchMealByName(name)
+    const data = response.data
+    const recipe = new Recipe(data)
+    let result: NeededData
+    result = {name: recipe.getName(), source: recipe.getSource(), tutorial: recipe.getTutorial(), img: recipe.getImage(), category: recipe.getCategory(), area: recipe.getArea(), ingredients: recipe.getIngredients(), directions: recipe.getDirecitons()}
+    return result
+}
+
+export async function getAllNamesFromFilter(data: string, type: string): Promise<string[] | undefined>  {
+    switch(type) {
+        case "area": {
+            const filter = new Filter()
+            const response = await filter.filterByArea(data)
+            const recipe = new Recipe(response.data) 
+            return recipe.getNames()
+            }
+        
+        case "category": {
+            const filter = new Filter()
+            const response = await filter.filterByCategory(data)
+            const recipe = new Recipe(response.data) 
+            return recipe.getNames()
+        }
+
+        case "ingredient": {
+            const filter = new Filter()
+            const response = await filter.filterByMainIngredient(data)
+            const recipe = new Recipe(response.data) 
+            return recipe.getNames()
+        }
+
+        default: {
+            return
+        }
+    }  
 }

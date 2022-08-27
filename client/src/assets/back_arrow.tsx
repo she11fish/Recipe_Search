@@ -1,6 +1,3 @@
-import Filters from "../components/Header/DropDownMenus/Filters/filters"
-import AreaType from "../interfaces/area"
-
 interface Props {
     setFilterClicked: React.Dispatch<React.SetStateAction<boolean>>
 }
