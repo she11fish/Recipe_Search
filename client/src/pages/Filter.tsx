@@ -7,7 +7,6 @@ import { getAllNamesFromFilter } from "../utils/utils";
 export default function Filters() {
     const { area, category, ingredient } = useParams()
     const [names, setNames] = useState<string[]>([])
-    const navigate = useNavigate()
     useEffect(() => {
         (async () => {
             const filter = new Filter()

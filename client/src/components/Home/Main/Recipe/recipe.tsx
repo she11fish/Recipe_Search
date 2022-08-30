@@ -3,12 +3,17 @@ import NeededData from "../../../../interfaces/needed_data";
 import { getAllRecipeInfo, getAllRelevantData } from "../../../../utils/utils";
 import "./recipe.css"
 
+interface Style {
+    marginTop: number
+}
+
 interface Props {
+    style: Style | null
     currentName: React.MutableRefObject<string> | string
     random: boolean
 }
 
-export default function Recipe({ currentName, random}: Props) {
+export default function Recipe({ style, currentName, random}: Props) {
     const [relevantData, setRelevantData] = useState<NeededData>();
     if (relevantData?.name && typeof currentName !== "string") {
         currentName.current = relevantData.name 
@@ -32,7 +37,7 @@ export default function Recipe({ currentName, random}: Props) {
 
     return (
         <>
-            <div id="grid-container">
+            <div style={style ? style : undefined}id="grid-container">
                 <div className="column">
                     <div>
                         <div className="name head-titles">

@@ -6,6 +6,7 @@ export default function Home() {
     const [isLoaded, setIsLoaded] = useState(false)
     return (
         <>
+            { !isLoaded && <h1 style={{color: "#725752"}}>Loading...</h1>}
             <SearchBar setIsLoaded={setIsLoaded}/> 
             { isLoaded && <Main />}
         </>

@@ -1,6 +1,8 @@
 .recipe {
     display: block;
 
+    width: 25%;
+
     color: var(--black) !important;
 
     font-family: var(--Inter);
@@ -25,6 +27,10 @@
     box-shadow: var(--shadow);
 
     overflow: scroll;
+}
+
+.visible {
+    display: block !important;
 }
 
 #drop-down-menu::-webkit-scrollbar {

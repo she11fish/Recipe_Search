@@ -5,14 +5,14 @@
 
     grid-template-columns: 276px 964px; 
 }
-
+ 
 .return_arrow {
     width: 57px;
     height: 47.5px;
 
     margin-top: 40.25px;
-    margin-left: 85.75px;
-
+    /* margin-left: 85.75px; */
+    margin-left: 42.875px;
 }
 
 .xlg-container {
@@ -38,7 +38,6 @@
 .sm-img {
     width: 152px;
     height: 209px;
-
 }
 
 .name {

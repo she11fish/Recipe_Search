@@ -9,18 +9,21 @@ import Ingredient from "./Ingredient/ingredient"
 
 interface Props {
     areas: AreaType[]
+    areaBoxRef: React.RefObject<HTMLDivElement>
     categories: CategoryType
+    categoryBoxRef: React.RefObject<HTMLDivElement>
     ingredients: IngredientType
+    ingredientBoxRef: React.RefObject<HTMLDivElement>
+    filterBoxRef: React.MutableRefObject<HTMLDivElement | null> 
 }
 
-export default function Filters({ areas, categories, ingredients }: Props) {
+export default function Filters({ areas, areaBoxRef, categories, categoryBoxRef, ingredients, ingredientBoxRef, filterBoxRef }: Props) {
     const [areaClicked, setAreaClicked] = useState(false)
     const [categoryClicked, setCategoryClicked] = useState(false)
     const [ingredientClicked, setIngredientClicked] = useState(false)
-    console.log("rendered", areaClicked, categoryClicked, ingredientClicked)
     return (!(areaClicked || categoryClicked || ingredientClicked)) ? (
         <>
-            <div className="filter_box">
+            <div ref={filterBoxRef} className="filter_box">
                     <div className="filter" onClick={() => setAreaClicked(!areaClicked)}>Area</div>
                     <div className="horizontal-line"></div>
                     <div className="filter" onClick={() => setCategoryClicked(!categoryClicked)}>Category</div>
@@ -28,17 +31,14 @@ export default function Filters({ areas, categories, ingredients }: Props) {
                     <div className="filter" onClick={() => setIngredientClicked(!ingredientClicked)}>Ingredient</div>
                     <div className="horizontal-line"></div>
             </div>
-            {/* <Area /> */}
-            {/* <Category />
-            <Ingredient /> */}
         </>
         
     ) : areaClicked ? (
-            <Area areas={areas} setAreaClicked={setAreaClicked} />
+            <Area areas={areas} areaBoxRef={areaBoxRef} setAreaClicked={setAreaClicked} />
         ) : categoryClicked ? (
-            <Category categories={categories} setCategoryClicked={setCategoryClicked}/>
+            <Category categories={categories} categoryBoxRef={categoryBoxRef} setCategoryClicked={setCategoryClicked}/>
             ) : ingredientClicked ? (
-                <Ingredient ingredients={ingredients} setIngredientClicked={setIngredientClicked}/>
+                <Ingredient ingredients={ingredients} ingredientBoxRef={ingredientBoxRef} setIngredientClicked={setIngredientClicked}/>
                 ) : (
                     null
                 )

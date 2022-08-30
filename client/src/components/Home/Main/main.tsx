@@ -10,7 +10,7 @@ export default function Main() {
     const observer = new IntersectionObserver(() => {
         console.log(names)
         for (let i = 0; i < 3; i++) {
-            const current_recipe = <Recipe currentName={currentName} random={true}/>
+            const current_recipe = <Recipe style={null} currentName={currentName} random={true}/>
             // eslint-disable-next-line react-hooks/rules-of-hooks
             if (!names.has(currentName.current)) {
                 current_recipes.push(current_recipe)

@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import "./search_list.css"
 
 interface Props {
     recipes: string[]
+    optionsBoxRef: React.MutableRefObject<HTMLDivElement | null>
 }
 
-export default function SearchList({ recipes }: Props) {
+export default function SearchList({ recipes, optionsBoxRef }: Props) {
     return (
         <>
-            <div id="drop-down-menu">
+            <div ref={optionsBoxRef} id="drop-down-menu">
                 {recipes.length ? recipes?.map((recipe_name, index) => { 
-                    return <Link key={index+1} to={`./search/${recipe_name}`} className="recipe" >{recipe_name}</Link> 
+                    return <Link key={index+1}  className="recipe" to={`./search/${recipe_name}`} >{recipe_name}</Link> 
                 }) : null}
             </div>  
         </>
