@@ -14,7 +14,9 @@ export default function Ingredient({ ingredients, ingredientBoxRef, setIngredien
         <>
             <div ref={ingredientBoxRef} className='filter_box scroll adjustment'> 
                 <BackArrow setFilterClicked={ setIngredientClicked }/>
-                { ingredients.map((ingredient, index) => <><Link key={index + 1} to={`./ingredient/${ingredient}`} className="ingredients sm-height">{ingredient}</Link></>) }
+                <div className='container'>
+                    { ingredients.map((ingredient, index) => <><Link key={index + 1} to={`./ingredient/${ingredient}`} className="ingredients sm-height">{ingredient}</Link></>) }
+                </div>
             </div>
         </>
     )

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import NeededData from "../../../../interfaces/needed_data";
 import { getAllRecipeInfo, getAllRelevantData } from "../../../../utils/utils";
 import "./recipe.css"
@@ -14,6 +14,9 @@ interface Props {
 }
 
 export default function Recipe({ style, currentName, random}: Props) {
+    const tabletSize = 744
+    const mobileSize = 428
+    const [isTabletSize, setIsTabletSize] = useState(window.innerWidth <= tabletSize && window.innerWidth > mobileSize)
     const [relevantData, setRelevantData] = useState<NeededData>();
     if (relevantData?.name && typeof currentName !== "string") {
         currentName.current = relevantData.name 
@@ -35,12 +38,31 @@ export default function Recipe({ style, currentName, random}: Props) {
         })()
     }, []);
 
+    function currentWidth() {
+        setIsTabletSize(window.innerWidth <= tabletSize && window.innerWidth > mobileSize)
+    }
+
+    useLayoutEffect(() => {
+        window.addEventListener("resize", currentWidth)
+    }, [])
+
+    const tutorial = (
+            <div className="tutorial">
+            <div className="head-titles">
+                Tutorial
+            </div>
+            <div className="white sm-container sm-font scroll">
+                <a className="link" href={relevantData?.tutorial}>{relevantData?.tutorial}</a>
+            </div>
+        </div>
+    )
+
     return (
         <>
-            <div style={style ? style : undefined}id="grid-container">
+            <div style={style ? style : undefined} className="grid-container">
                 <div className="column">
                     <div>
-                        <div className="name head-titles">
+                        <div className="head-titles">
                             {relevantData?.name}
                         </div>
                         <img src={relevantData?.img}/>
@@ -59,7 +81,7 @@ export default function Recipe({ style, currentName, random}: Props) {
                         Ingredients
                     </div>
                     <div>
-                        <div className="white lg-container">
+                        <div className="white lg-container scroll">
                             <ul>
                                 {relevantData?.ingredients?.map(ingredient => <li>{ingredient}</li>)}
                             </ul>                            
@@ -74,6 +96,7 @@ export default function Recipe({ style, currentName, random}: Props) {
                             <a className="link" href={relevantData?.source}>{relevantData?.source}</a>
                         </div>
                     </div>
+                    { isTabletSize && tutorial}
                 </div>
                 <div className="column">
                     <div className="head-titles">
@@ -84,12 +107,7 @@ export default function Recipe({ style, currentName, random}: Props) {
                             <p className="sm-font paragraph">{relevantData?.directions}</p>
                         </div>
                     </div>
-                    <div className="tutorial">
-                        <div className="head-titles">Tutorial</div>
-                        <div className="white sm-container sm-font scroll">
-                        <a className="link" href={relevantData?.tutorial}>{relevantData?.tutorial}</a>
-                        </div>
-                    </div>
+                    { !isTabletSize && tutorial}
                 </div>
             </div>
         </>

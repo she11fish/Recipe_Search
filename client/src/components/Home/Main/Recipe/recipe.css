@@ -1,14 +1,15 @@
-#grid-container {
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 400px);
-    gap: 20px;
-    margin-top: 176px;
-    margin-left: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.38889vw;
+    margin-top: 12.369%;
+    margin-left: 7.028%;
+    margin-right: 7.028%;
 }
 
 img {
-    width: 400px;
-    height: 557px;
+    width: 100%;
+    height: 38.6806vw;
 }
 
 .white {
@@ -16,13 +17,13 @@ img {
 }
 
 .lg-container {
-    width: 400px;
-    height: 557px;
+    width: 27.778vw;
+    height: 38.6806vw;
 }
 
 .sm-container {
-    width: 400px;
-    height: 104px;
+    width: 27.78vw;
+    height: 7.223vw;
     
     display: flex;
     align-items: center;
@@ -35,7 +36,7 @@ img {
 
 .link {
     position: relative;
-    left: 3px;
+    left: calc(3 / 1440 * 100vw);
 }
 
 a:link {
@@ -48,29 +49,30 @@ a:visited {
 }
 
 .head-titles {
-    font-size: 28px;
-    margin-top: 29px;
-    margin-bottom: 29px;
+    font-size: 1.9444vw;
+    margin-top: 2.01389vw;
+    margin-bottom: 2.01389vw;
     text-align: center;
-    height: 43px;
     width: 100%;
+    height: 2.9862vw;
 }
 
 .paragraph {
     position: relative;
-    top: 12px;
-    left: 16px;
+    top: 0.833333vw;
+    left: var(--sm-font);
     
     margin: 0px;
-    width: 370px;
-    height: 530px;
-
+    width: 25.695vw;
+    height: 36.806vw;
 }
 
 ul {
     position: relative;
     margin: 0;
-    top: 16px;
+    padding-left: 2.7778vw;
+    top: var(--sm-font);
+    font-size: var(--sm-font);
 }
 
 li::marker {
@@ -91,4 +93,176 @@ p {
     overflow: hidden;
     white-space: normal;
     -webkit-line-clamp: 2;
+}
+
+@media (max-width: 744px) {
+    .grid-container {
+        grid-template-columns: repeat(2, calc(294 / 744 * 100vw));
+        column-gap: calc(20 / 744 * 100vw);
+        row-gap: 0;
+        margin-top: calc(80 / 744 * 100vw);
+        /* margin-top: 12.369%;
+        margin-left: 7.028%;
+        margin-right: 7.028%; */
+    }
+
+    .grid-container:first-child {
+        margin-top: calc(120 / 744 * 100vw);
+    }
+
+    .column:last-child {
+        grid-column: span 2;
+    }
+
+    .lg-container {
+        width: 100%;
+        height: calc(417 / 744 * 100vw);
+    }
+
+    img {
+        height: calc(417 / 744 * 100vw);
+    }
+
+    .paragraph {
+        position: relative;
+        top: calc(11 / 744 * 100vw);
+        left: calc(13 / 744 * 100vw);
+        
+        margin: 0px;
+        width: calc(100% - calc(31 / 744 * 100vw));
+
+        font-size: calc(16 / 744 * 100vw);
+    }
+
+    .sm-container {
+        width: 100%;
+        height: calc(40 / 744 * 100vw);
+    }
+
+    .link {
+        width: 100%;
+        font-size: calc(10 / 744 * 100vw);
+    }
+
+    .head-titles {
+        font-size: calc(24 / 744 * 100vw);
+        height: calc(89 / 744 * 100vw);
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .source .tutorial {
+        height: calc(80 / 744 * 100vw);
+    }
+
+    .source .head-titles {
+        height: calc(40 / 744 * 100vw);
+        font-size: calc(18 / 744 * 100vw);
+    }
+
+    .tutorial .head-titles {
+        height: calc(40 / 744 * 100vw);
+        font-size: calc(18 / 744 * 100vw);
+    }
+
+    ul {
+        width: calc(100% - 2.7778vw - calc(18 / 744 * 100vw));
+        margin: 0 auto;
+    }
+
+    li {
+        font-size: calc(16 / 744 * 100vw);
+    }
+}
+
+@media (max-width: 428px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        
+        width: calc(328 / 428 * 100vw);
+        margin-inline: auto;
+    }
+
+    .grid-container:first-child {
+        margin-top: calc(120 / 744 * 100vw);
+    }
+
+    .column:first-child > div:first-child {
+        height: calc(531 / 428 * 100vw);
+    }
+
+    .lg-container {
+        width: 100%;
+        height: calc(440 / 428 * 100vw);
+    }
+
+    img {
+        height: calc(445 / 428 * 100vw);
+    }
+
+    .paragraph {
+        position: relative;
+        top: calc(13 / 428 * 100vw);
+        left: calc(11 / 428 * 100vw);
+        
+        margin: 0px;
+        width: calc(100% - calc(33 / 744 * 100vw));
+
+        font-size: calc(15 / 428 * 100vw);
+    }
+
+    .sm-container {
+        width: 100%;
+        height: calc(86 / 428 * 100vw);
+    }
+
+    .link {
+        width: 100%;
+        font-size: calc(15 / 428 * 100vw);
+    }
+
+    .head-titles {
+        font-size: calc(24 / 428 * 100vw);
+        height: calc(86 / 428 * 100vw);
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    ul {
+        width: calc(268 / 428 * 100vw);
+        top: 0;
+        margin-top: calc(13 / 428 * 100vw);
+        padding: 0;
+    }
+
+    li {
+        font-size: calc(15 / 428 * 100vw);
+    }
+    
+    li::marker {
+        font-size: calc(11 / 428 * 100vw);
+    } 
+
+    .source .tutorial {
+        height: calc(86 / 428 * 100vw);
+    }
+
+    .source .head-titles {
+        height: calc(86 / 428 * 100vw);
+        font-size: calc(24 / 428 * 100vw);
+    }
+
+    .tutorial .head-titles {
+        height: calc(86 / 428 * 100vw);
+        font-size: calc(24 / 428 * 100vw);
+    }
 }

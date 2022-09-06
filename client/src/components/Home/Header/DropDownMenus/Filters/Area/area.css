@@ -1,8 +1,8 @@
 .areas {
     position: relative;
-    top: 523px;
+    top: calc(523 / 1440 * 100vw);
 
-    font-size: 40px;
+    font-size: calc(40 / 1440 * 100vw);
     font-family: var(--Inter);
 }
 
@@ -19,8 +19,37 @@
 
 .back_arrow {
     position: absolute;
-    top: 15.75px;
-    left: 20.25px;
-    width: 27px;
-    height: 22.5px;
+    top: calc(15.75 / 1440 * 100vw);
+    left: calc(20.25 / 1440 * 100vw);
+    width: calc(27 / 1440 * 100vw);
+    height: calc(22.5 / 1440 * 100vw);
+}
+
+@media (max-width: 428px) {
+    .areas {
+        position: relative;
+        top: calc(127 / 428 * 100vw);
+    
+        font-size: calc(10 / 428 * 100vw);
+        font-family: var(--Inter);
+    }
+
+    
+    .scroll {
+        overflow: scroll;
+        overflow-y: overlay;
+        overflow-x: overlay;
+    }
+    
+    .scroll::-webkit-scrollbar {
+        overflow: hidden;
+    }
+    
+    .back_arrow {
+        position: absolute;
+        top: calc(2.98 / 428 * 100vw);
+        left: calc(3.5 / 428 * 100vw);
+        width: calc(6.75 / 428 * 100vw);
+        height: calc(5.59 / 428 * 100vw);
+    }
 }

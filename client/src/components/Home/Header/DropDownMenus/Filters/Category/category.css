@@ -1,7 +1,17 @@
 .categories {
     position: relative;
-    top: 202px;
+    top: calc(202 / 1440 * 100vw);
 
-    font-size: 40px;
+    font-size: calc(40 / 1440 * 100vw);
     font-family: var(--Inter);
+}
+
+@media (max-width: 428px) {
+    .categories {
+        position: relative;
+        top: calc(48 / 428 * 100vw);
+    
+        font-size: calc(10 / 428 * 100vw);
+        font-family: var(--Inter);
+    }
 }

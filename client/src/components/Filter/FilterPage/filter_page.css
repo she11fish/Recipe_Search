@@ -1,0 +1,28 @@
+.return-arrow {
+    width: calc(57 / 1440 * 100vw);
+    height: calc(48 / 1440 * 100vw);
+
+    margin-top: calc(40 / 1440 * 100vw);
+    margin-left: calc(43 / 1440 * 100vw);
+}
+
+@media (max-width: 748px) {
+    .return-arrow {
+        width: calc(42.25 / 748 * 100vw);
+        height: calc(36 / 748 * 100vw);
+    
+        margin-top: calc(30 / 748 * 100vw);
+        margin-left: calc(32.25 / 748 * 100vw);
+    }
+
+}
+
+@media (max-width: 428px) {
+    .return-arrow {
+        width: calc(42.25 / 428 * 100vw);
+        height: calc(36 / 428 * 100vw);
+    
+        margin-top: calc(30 / 428 * 100vw);
+        margin-left: calc(32.25 / 428 * 100vw);
+    }
+}

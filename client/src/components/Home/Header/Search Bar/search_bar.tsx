@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState, useEffect, useRef } from 'react'
+import { SyntheticEvent, useState, useEffect, useRef, useLayoutEffect } from 'react'
 import SearchIcon from "../../../../assets/search_icon"
 import ArrowDown from "../../../../assets/arrow_down"
 import ArrowRight from "../../../../assets/arrow_right"
@@ -55,17 +55,14 @@ export default function SearchBar({ setIsLoaded }: Props) {
         const ingredientBox: HTMLDivElement | null = ingredientBoxRef.current
         const button: HTMLButtonElement | null = buttonRef.current
         const target = event.target as Node
-        console.log()
-        if (button === target || 
-            button?.childNodes[0] === target || 
-            button?.childNodes[0].childNodes[0] === target 
+
+        if (button?.isEqualNode(target) || 
+            button?.childNodes[0].isEqualNode(target) || 
+            button?.childNodes[0].childNodes[0].isEqualNode(target) 
             ) {
-            console.log(`"true"`)
             setFilterFocus(!filterFocus)
-            console.log(filterFocus)
             return
         }
-        console.log("false")
         if (filterBox?.contains(target) || 
             areaBox?.contains(target) || 
             categoryBox?.contains(target) || 

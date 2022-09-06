@@ -1,8 +1,46 @@
 .ingredients {
     position: relative;
-    top: 5885px;
+    top: calc(13 / 1440 * 100vw);
     text-align: center;
 
     font-size: var(--sm-font);
     font-family: var(--Inter);
+
+    z-index: 5;
+}
+
+.back_arrow {
+    z-index: 6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(300 / 1440 * 100vw);
+    height: calc(300 / 1440 * 100vw);
+} 
+
+@media (max-width: 428px) {
+    .ingredients {
+        display: inline-block;
+        position: relative;
+        top: calc(3 / 428 * 100vw);
+        text-align: center;
+    
+        font-size: calc(6.5 / 428 * 100vw);
+        font-family: var(--Inter);
+        z-index: 5;
+    }
+    .back_arrow {
+        z-index: 6;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+    
+        width: 100%;
+        height: 100%;
+    } 
 }
