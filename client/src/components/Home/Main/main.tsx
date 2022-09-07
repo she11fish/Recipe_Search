@@ -6,7 +6,6 @@ export default function Main() {
     const [recipes, setRecipes] = useState<JSX.Element[]>([]) 
     const names: Set<string> = new Set()
     const currentName = useRef<string>("")
-    const config = { threshold: 1 }
     const observer = new IntersectionObserver(() => {
         console.log(names)
         for (let i = 0; i < 3; i++) {
@@ -18,9 +17,10 @@ export default function Main() {
             }
         } 
         setRecipes([...recipes, ...current_recipes])
-    }, config)
+    })
 
     const endRef = useRef(null)
+    
     useEffect(() => {
         if (endRef.current) 
             observer.observe(endRef.current)

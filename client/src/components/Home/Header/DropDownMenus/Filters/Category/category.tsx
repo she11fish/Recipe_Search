@@ -14,7 +14,9 @@ export default function Category({ categories, categoryBoxRef, setCategoryClicke
         <>
             <div ref={categoryBoxRef} className='filter_box scroll' > 
                 <BackArrow setFilterClicked={ setCategoryClicked }/>
-                { categories.map((category, index) => <><Link key={index + 1} to={`./category/${category}`} className="categories">{category}</Link></>) }
+                <div className='container'>
+                    { categories.map((category, index) => <><Link key={index + 1} to={`./category/${category}`} className="categories">{category}</Link></>) }
+                </div>
             </div>
         </>
     )

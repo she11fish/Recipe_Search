@@ -49,7 +49,7 @@ a:visited {
 }
 
 .head-titles {
-    font-size: 1.9444vw;
+    font-size: calc(24 / 1440 * 100vw);
     margin-top: 2.01389vw;
     margin-bottom: 2.01389vw;
     text-align: center;
@@ -101,9 +101,6 @@ p {
         column-gap: calc(20 / 744 * 100vw);
         row-gap: 0;
         margin-top: calc(80 / 744 * 100vw);
-        /* margin-top: 12.369%;
-        margin-left: 7.028%;
-        margin-right: 7.028%; */
     }
 
     .grid-container:first-child {

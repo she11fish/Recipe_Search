@@ -1,6 +1,8 @@
 .categories {
     position: relative;
-    top: calc(202 / 1440 * 100vw);
+    top: calc(10 / 1440 * 100vw);
+
+    text-align: center;
 
     font-size: calc(40 / 1440 * 100vw);
     font-family: var(--Inter);
@@ -9,7 +11,9 @@
 @media (max-width: 428px) {
     .categories {
         position: relative;
-        top: calc(48 / 428 * 100vw);
+        top: calc(3 / 428 * 100vw);
+
+        text-align: center;
     
         font-size: calc(10 / 428 * 100vw);
         font-family: var(--Inter);
