@@ -29,7 +29,7 @@ export default function Main() {
     return (
         <>
             { recipes.map(recipe => recipe) }
-            <div ref={endRef} className="end-page" style={{width: 1, height: 1}}></div>
+            <div ref={endRef} className="end-page" style={{width: 20, height: 20, position: "absolute"}}></div>
         </>
     )
 }

@@ -5,10 +5,7 @@ import Data from "../interfaces/data"
 import { DirectionType } from "../interfaces/direction"
 import { IngredientType } from "../interfaces/ingredient"
 import NeededData from "../interfaces/needed_data"
-import Filter from "./filter"
-import List from "./list"
-import Recipe from "./recipe"
-import Search from "./search"
+import { Filter, List, Recipe, Search} from "./tools"
 
 
 export async function getAllRecipeNames(setRecipes: React.Dispatch<React.SetStateAction<string[]>>): Promise<void> {

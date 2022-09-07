@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import FilterPage from "../components/Filter/FilterPage/filter_page";
-import Filter from "../utils/filter"
 import { getAllNamesFromFilter } from "../utils/utils";
 
 export default function Filters() {
@@ -9,7 +8,6 @@ export default function Filters() {
     const [names, setNames] = useState<string[]>([])
     useEffect(() => {
         (async () => {
-            const filter = new Filter()
             if (area) { 
                 const names = await getAllNamesFromFilter(area, "area")
                 if (names?.length) setNames(names)
