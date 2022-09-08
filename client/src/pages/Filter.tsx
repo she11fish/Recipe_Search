@@ -1,33 +1,46 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import FilterPage from "../components/Filter/FilterPage/filter_page";
+import Filter from "../components/Filter/filter";
+import NotFound from "../components/NotFound/not_found";
 import { getAllNamesFromFilter } from "../utils/utils";
 
 export default function Filters() {
     const { area, category, ingredient } = useParams()
-    const [names, setNames] = useState<string[]>([])
+    const [names, setNames] = useState<string[] | null>(null)
     useEffect(() => {
-        (async () => {
-            if (area) { 
-                const names = await getAllNamesFromFilter(area, "area")
-                if (names?.length) setNames(names)
-            }
-            if (category) {
-                const names = await getAllNamesFromFilter(category, "category")
-                if (names?.length) setNames(names)
-                
-            }
+        if (area) { 
+            getAllNamesFromFilter(area, "area")
+                .then(names => {
+                    if (names?.length) setNames(names)
+                })
+                .catch(err => {
+                    console.log(`An error occured while fetching`)
+                })
+        }
+        if (category) {
+            getAllNamesFromFilter(category, "category")
+                .then(names => {
+                    if (names?.length) setNames(names)
+                })
+                .catch(err => {
+                    console.log(`An error occured while fetching`)
+                })
+        }
 
-            if (ingredient) {
-                const names = await getAllNamesFromFilter(ingredient, "ingredient")
-                if (names?.length) setNames(names)
-            }
-        })()
-
+        if (ingredient) {
+            getAllNamesFromFilter(ingredient, "ingredient")
+                .then(names => {
+                    if (names?.length) setNames(names)
+                })
+                .catch(err => {
+                    console.log(`An error occured while fetching`)
+                })
+        }
     }, [])
     return (
         <>
-            { names.length && <FilterPage names={names} /> }
+            { names !== null && names.length && <Filter names={names} />}
+            {names !== null && !names.length && <NotFound />}
         </>
     )
 }

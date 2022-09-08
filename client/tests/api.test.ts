@@ -1,6 +1,4 @@
-import Search from "../src/utils/search"
-import List from "../src/utils/list"
-import Filter from "../src/utils/filter"
+import { Search, List, Filter } from "../src/utils/tools"
 
 describe("Implements Search Class properly", () => {
     test("successfully searched meal by name", async () => {

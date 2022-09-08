@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Filter from './pages/Filter';
 import Home from './pages/Home';
+import PageNotFound from "./pages/PageNotFound";
 import Search from './pages/Search';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/area/:area" element={<Filter />} />
           <Route path="/category/:category" element={<Filter />} />
           <Route path="/ingredient/:ingredient" element={<Filter />} />
+          <Route path="*" element = {<PageNotFound />} />
         </Routes>
       </BrowserRouter>
       

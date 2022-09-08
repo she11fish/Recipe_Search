@@ -3,17 +3,12 @@ import NeededData from "../../../../interfaces/needed_data";
 import { getAllRecipeInfo, getAllRelevantData } from "../../../../utils/utils";
 import "./recipe.css"
 
-interface Style {
-    marginTop: number
-}
-
 interface Props {
-    style: Style | null
     currentName: React.MutableRefObject<string> | string
     random: boolean
 }
 
-export default function Recipe({ style, currentName, random}: Props) {
+export default function Recipe({ currentName, random}: Props) {
     const tabletSize = 744
     const mobileSize = 428
     const [isTabletSize, setIsTabletSize] = useState(window.innerWidth <= tabletSize && window.innerWidth > mobileSize)
@@ -59,7 +54,7 @@ export default function Recipe({ style, currentName, random}: Props) {
 
     return (
         <>
-            <div style={style ? style : undefined} className="grid-container">
+            <div className="grid-container">
                 <div className="column">
                     <div>
                         <div className="head-titles">

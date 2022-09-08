@@ -1,7 +1,4 @@
-import Recipe from "../src/utils/recipe"
-import Search from "../src/utils/search"
-import List from "../src/utils/list"
-import Filter from "../src/utils/filter"
+import { Recipe, Search, List, Filter } from "../src/utils/tools"
 
 describe("Can get all required recipe data from api", () => {
     test("Gets name from data", async () => {

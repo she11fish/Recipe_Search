@@ -1,0 +1,36 @@
+.page-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+
+    color: #725752; 
+
+    width: 100vw; 
+    height: 100vh;
+
+    margin: 0;
+
+    position: absolute;
+
+    transform: translate(0, -25%);
+    
+}
+
+.page-container > h1 {
+    margin: 0;
+    font-size: calc(120 / 1440 * 100vw);
+}
+
+@media (max-width: 744px) {
+    .page-container > h1 {
+        margin: 0;
+        font-size: calc(80 / 744 * 100vw);
+    }
+}
+
+@media (max-width: 428px) {
+    .page-container > h1 {
+        margin: 0;
+        font-size: calc(60 / 428 * 100vw);
+    }
+}

@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState, useEffect, useRef, useLayoutEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import SearchIcon from "../../../../assets/search_icon"
 import ArrowDown from "../../../../assets/arrow_down"
 import ArrowRight from "../../../../assets/arrow_right"

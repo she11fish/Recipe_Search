@@ -14,7 +14,6 @@
         margin-top: calc(30 / 748 * 100vw);
         margin-left: calc(32.25 / 748 * 100vw);
     }
-
 }
 
 @media (max-width: 428px) {
