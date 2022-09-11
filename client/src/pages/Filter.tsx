@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Filter from "../components/Filter/filter";
 import NotFound from "../components/NotFound/not_found";
 import { getAllNamesFromFilter } from "../utils/utils";
