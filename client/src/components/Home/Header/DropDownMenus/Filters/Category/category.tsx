@@ -1,6 +1,6 @@
 import './category.css'
 import BackArrow from "../../../../../../assets/back_arrow"
-import { CategoryType } from '../../../../../../interfaces/category'
+import { CategoryType } from '../../../../../../interfaces/types'
 import { Link } from 'react-router-dom'
 
 interface Props {

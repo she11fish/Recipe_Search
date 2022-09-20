@@ -1,10 +1,4 @@
-import AreaType from "../interfaces/area"
-import Area from "../interfaces/area"
-import { CategoryType } from "../interfaces/category"
-import Data from "../interfaces/data"
-import { DirectionType } from "../interfaces/direction"
-import { IngredientType } from "../interfaces/ingredient"
-import NeededData from "../interfaces/needed_data"
+import { AreaType as Area, CategoryType, Data, NeededData } from "../interfaces/types"
 import { Filter, List, Recipe, Search} from "./tools"
 
 

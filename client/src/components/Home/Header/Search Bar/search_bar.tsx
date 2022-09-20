@@ -6,8 +6,8 @@ import SearchList from "../DropDownMenus/SearchList/search_list"
 import Filters from "../DropDownMenus/Filters/filters"
 import "./search_bar.css"
 import { getAllAreas, getAllCategories, getAllIngredients, getAllRecipeNames } from '../../../../utils/utils'
-import AreaType from '../../../../interfaces/area'
-import { CategoryType } from '../../../../interfaces/category'
+import { AreaType } from '../../../../interfaces/types'
+import { CategoryType } from '../../../../interfaces/types'
 import { useNavigate } from 'react-router-dom'
 
 interface Props {

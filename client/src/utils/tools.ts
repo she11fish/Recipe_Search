@@ -1,6 +1,5 @@
 import axios from "axios"
-import ServerResponse from "../interfaces/server_response"
-import Data from "../interfaces/data" 
+import { ServerResponse, Data } from "../interfaces/types"
 
 export class Search {
     searchMealByName(name: string): Promise<ServerResponse> {

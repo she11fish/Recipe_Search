@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import NeededData from "../../../../interfaces/needed_data";
+import { NeededData } from "../../../../interfaces/types";
 import { getAllRecipeInfo, getAllRelevantData } from "../../../../utils/utils";
 import "./recipe.css"
 

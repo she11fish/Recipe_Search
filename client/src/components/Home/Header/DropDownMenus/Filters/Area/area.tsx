@@ -1,6 +1,6 @@
 import './area.css'
 import BackArrow from "../../../../../../assets/back_arrow"
-import AreaType from '../../../../../../interfaces/area'
+import { AreaType } from '../../../../../../interfaces/types'
 import { Link } from 'react-router-dom'
 
 interface Props {
