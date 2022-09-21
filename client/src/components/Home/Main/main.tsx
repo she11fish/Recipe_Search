@@ -8,12 +8,17 @@ export default function Main() {
     const currentName = useRef<string>("")
     const observer = new IntersectionObserver(() => {
         console.log(names)
-        for (let i = 0; i < 3; i++) {
+        let i = 0;
+        while(i < 3) {
             const current_recipe = <Recipe currentName={currentName} random={true}/>
+
+            // If the recipe is not a duplicate, then it's rendered and added to the set
             // eslint-disable-next-line react-hooks/rules-of-hooks
             if (!names.has(currentName.current)) {
                 current_recipes.push(current_recipe)
                 names.add(currentName.current)
+            } else {
+                i++;
             }
         } 
         setRecipes([...recipes, ...current_recipes])
