@@ -5,7 +5,6 @@ import { Filter, List, Recipe, Search} from "./tools"
 export async function getAllRecipeNames(setRecipes: React.Dispatch<React.SetStateAction<string[]>>): Promise<void> {
     const list = new List()
     const responses = await list.listAllMeals()
-    console.log('Done')
     let data: Data 
     let recipe: Recipe
     let names: string[] = []
