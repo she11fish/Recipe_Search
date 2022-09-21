@@ -31,7 +31,6 @@ export interface NeededData {
     area: string | undefined
     ingredients: string[] | undefined
     directions: string | undefined
-
 }
 
 export interface ServerResponse {
