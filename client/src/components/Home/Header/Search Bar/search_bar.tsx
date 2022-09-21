@@ -116,7 +116,7 @@ export default function SearchBar({ setIsLoaded }: Props) {
             <>
                 <header>
                     <input 
-                        id="search_text_box" type="text" 
+                        id="search-text-box" type="text" 
                         ref={inputRef}
                         placeholder='Enter Recipe Name' 
                         onChange={auto_complete}

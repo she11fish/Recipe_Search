@@ -39,7 +39,7 @@ html {
     overflow-y: overlay;
 }
 
-#search_text_box {
+#search-text-box {
     width: calc(625 / 1440 * 100vw);
     height: calc(144 / 1440 * 100vw);
     padding: 0px;
@@ -53,14 +53,14 @@ html {
     
 }
 
-#search_text_box::placeholder {
+#search-text-box::placeholder {
     position: absolute;
     top: calc(42 / 1440 * 100vw);
     color: var(--black);
     font-size: var(--lg-font);
 }
 
-#search_text_box:focus {
+#search-text-box:focus {
     font-family: var(--Inter);
     color: var(--black); 
     border: 0;
@@ -82,10 +82,6 @@ button {
     width: calc(144 / 1440 * 100vw);
     height: calc(144 / 1440 * 100vw);
     
-}
-
-#search_button:hover {
-    cursor: pointer;
 }
 
 header {
@@ -120,7 +116,7 @@ header {
 
 @media (max-width: 428px) {
     
-    #search_text_box {
+    #search-text-box {
         width: calc(216 / 428 * 100vw);
         height: calc(49 / 428 * 100vw);
         padding: 0px;
@@ -132,14 +128,14 @@ header {
         
     }
     
-    #search_text_box::placeholder {
+    #search-text-box::placeholder {
         position: absolute;
         top: calc(13 / 428 * 100vw);
         color: var(--black);
         font-size: calc(20 / 428 * 100vw);
     }
     
-    #search_text_box:focus {
+    #search-text-box:focus {
         font-family: var(--Inter);
         color: var(--black); 
         border: 0;
@@ -161,10 +157,6 @@ header {
         width: calc(49 / 428 * 100vw);
         height: calc(49 / 428 * 100vw);
         
-    }
-    
-    #search_button:hover {
-        cursor: pointer;
     }
     
     header {

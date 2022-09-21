@@ -1,4 +1,4 @@
-.filter_box {
+.filter-box {
     position: absolute;
     top: calc(383 / 1440 * 100vw);
     left: calc(1051 / 1440 * 100vw);
@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 428px) {
-    .filter_box {
+    .filter-box {
         position: absolute;
         top: calc(112 / 428 * 100vw);
         left: calc(328 / 428 * 100vw);

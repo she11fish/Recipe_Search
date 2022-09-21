@@ -23,7 +23,7 @@ export default function Filters({ areas, areaBoxRef, categories, categoryBoxRef,
     const [ingredientClicked, setIngredientClicked] = useState(false)
     return (!(areaClicked || categoryClicked || ingredientClicked)) ? (
         <>
-            <div ref={filterBoxRef} className="filter_box">
+            <div ref={filterBoxRef} className="filter-box">
                     <div className="filter" onClick={() => setAreaClicked(!areaClicked)}>Area</div>
                     <div className="horizontal-line"></div>
                     <div className="filter" onClick={() => setCategoryClicked(!categoryClicked)}>Category</div>

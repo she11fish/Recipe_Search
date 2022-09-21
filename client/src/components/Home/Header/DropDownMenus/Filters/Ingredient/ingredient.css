@@ -9,7 +9,7 @@
     z-index: 5;
 }
 
-.back_arrow {
+.back-arrow {
     z-index: 6;
 }
 
@@ -32,7 +32,7 @@
         font-family: var(--Inter);
         z-index: 5;
     }
-    .back_arrow {
+    .back-arrow {
         z-index: 6;
     }
     

@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-.back_arrow {
+.back-arrow {
     position: absolute;
     top: calc(15.75 / 1440 * 100vw);
     left: calc(20.25 / 1440 * 100vw);
@@ -49,7 +49,7 @@
         overflow: hidden;
     }
     
-    .back_arrow {
+    .back-arrow {
         position: absolute;
         top: calc(2.98 / 428 * 100vw);
         left: calc(3.5 / 428 * 100vw);
