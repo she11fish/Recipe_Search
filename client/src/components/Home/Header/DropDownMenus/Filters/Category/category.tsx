@@ -12,7 +12,7 @@ interface Props {
 export default function Category({ categories, categoryBoxRef, setCategoryClicked }: Props) {
     return (
         <>
-            <div ref={categoryBoxRef} className='filter_box scroll' > 
+            <div ref={categoryBoxRef} className='filter-box scroll' > 
                 <BackArrow setFilterClicked={ setCategoryClicked }/>
                 <div className='container'>
                     { categories.map((category, index) => <><Link key={index + 1} to={`./category/${category}`} className="categories">{category}</Link></>) }

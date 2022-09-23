@@ -12,7 +12,7 @@ interface Props {
 export default function Ingredient({ ingredients, ingredientBoxRef, setIngredientClicked }: Props) {
     return (
         <>
-            <div ref={ingredientBoxRef} className='filter_box scroll adjustment'> 
+            <div ref={ingredientBoxRef} className='filter-box scroll adjustment'> 
                 <BackArrow setFilterClicked={ setIngredientClicked }/>
                 <div className='container'>
                     { ingredients.map((ingredient, index) => <><Link key={index + 1} to={`./ingredient/${ingredient}`} className="ingredients sm-height">{ingredient}</Link></>) }

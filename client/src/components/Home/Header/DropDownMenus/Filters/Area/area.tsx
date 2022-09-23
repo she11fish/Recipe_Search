@@ -12,7 +12,7 @@ interface Props {
 export default function Area({ areas, areaBoxRef, setAreaClicked }: Props) {
     return (
         <>
-            <div ref={areaBoxRef} className='filter_box scroll'> 
+            <div ref={areaBoxRef} className='filter-box scroll'> 
                 <BackArrow setFilterClicked={ setAreaClicked }/>
                 <div className='container'>
                     { areas.map(area => <><Link key={area.id} to={`./area/${area.name}`} className="areas">{area.name}</Link></>) }
