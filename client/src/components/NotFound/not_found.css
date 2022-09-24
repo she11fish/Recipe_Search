@@ -10,27 +10,39 @@
 
     margin: 0;
 
+    animation: none;
+
     position: absolute;
 
-    transform: translate(0, -25%);
-    
+    transform: translate(0, -25%); 
 }
 
 .page-container > h1 {
     margin: 0;
+    animation: none;
     font-size: calc(120 / 1440 * 100vw);
 }
 
 @media (max-width: 744px) {
+    .page-container {
+        animation: none;
+    }
+    
     .page-container > h1 {
         margin: 0;
+        animation: none;
         font-size: calc(80 / 744 * 100vw);
     }
 }
 
 @media (max-width: 428px) {
+    .page-container {
+        animation: none;
+    }
+
     .page-container > h1 {
         margin: 0;
+        animation: none;
         font-size: calc(60 / 428 * 100vw);
     }
 }

@@ -3,6 +3,8 @@
 
     width: 100%;
 
+    animation: none;
+
     color: var(--black) !important;
 
     font-family: var(--Inter);
@@ -25,6 +27,8 @@
     border: 1px solid var(--black);
 
     box-shadow: var(--shadow);
+
+    animation: none;
 
     overflow: scroll;
 }

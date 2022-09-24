@@ -4,10 +4,22 @@
 
     text-align: center;
 
+    
+    animation: 0.25s swipe-right cubic-bezier(0.03, 0.85, 0.5, 0.99);
+
     font-size: calc(40 / 1440 * 100vw);
     font-family: var(--Inter);
 }
 
+@keyframes swipe-right {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+
+}
 
 .scroll {
     overflow: scroll;
@@ -21,10 +33,13 @@
 
 .back-arrow {
     position: absolute;
+
     top: calc(15.75 / 1440 * 100vw);
     left: calc(20.25 / 1440 * 100vw);
     width: calc(27 / 1440 * 100vw);
     height: calc(22.5 / 1440 * 100vw);
+
+    animation: 0.25s swipe-right cubic-bezier(0.03, 0.85, 0.5, 0.99);
 }
 
 @media (max-width: 428px) {
@@ -33,7 +48,8 @@
         top: calc(2 / 428 * 100vw);
 
         text-align: center;
-    
+
+        animation: none;
         font-size: calc(10 / 428 * 100vw);
         font-family: var(--Inter);
     }
@@ -51,9 +67,14 @@
     
     .back-arrow {
         position: absolute;
+
         top: calc(2.98 / 428 * 100vw);
         left: calc(3.5 / 428 * 100vw);
         width: calc(6.75 / 428 * 100vw);
         height: calc(5.59 / 428 * 100vw);
+
+        animation: none;
+
+        z-index: 6;        
     }
 }

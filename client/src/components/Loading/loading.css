@@ -1,0 +1,43 @@
+.loading {
+    color: #725752;
+    font-size: calc(48 / 1440 * 100vw);
+    animation: none;
+}
+
+.loading > h1 {
+    animation: none;
+}
+
+html, body {
+    animation: none;
+}
+
+@media (max-width: 768px) {
+    .loading {
+        font-size: calc(48 / 768 * 100vw);
+        animation: none;
+    }
+    
+    .loading > h1 {
+        animation: none;
+    }
+    
+    html, body {
+        animation: none;
+    }
+}
+
+@media (max-width: 428px) {
+    .loading {
+        font-size: calc(48 / 428 * 100vw);
+        animation: none;
+    }
+    
+    .loading > h1 {
+        animation: none;
+    }
+    
+    html, body {
+        animation: none;
+    }
+}

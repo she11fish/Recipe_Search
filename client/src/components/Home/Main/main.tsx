@@ -7,7 +7,6 @@ export default function Main() {
     const names: Set<string> = new Set()
     const currentName = useRef<string>("")
     const observer = new IntersectionObserver(() => {
-        console.log(names)
         let i = 0;
         while(i < 3) {
             const current_recipe = <Recipe currentName={currentName} random={true}/>
